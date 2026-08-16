@@ -24,7 +24,7 @@ Store_Location_City_Type = st.selectbox(
 )
 Store_Type = st.selectbox(
     "Store Type",
-    ["Supermarket Type1", "Supermarket Type2", "Departmental Store", "Food Mart"],
+    ["Supermarket Type1", "Supermarket Type2", "Supermarket Type3", "Departmental Store", "Food Mart"],
 )
 Product_Id_char = st.selectbox("Product ID Prefix", ["FD", "DR", "NC"])
 Store_Age_Years = st.number_input("Store Age (Years)", min_value=0, value=16, step=1)
@@ -54,7 +54,7 @@ if st.button("Predict", type="primary"):
         )
         if response.ok:
             predicted_sales = response.json()["Sales"]
-            st.success(f"Predicted Product Store Sales Total: {predicted_sales:,.2f}") 
+            st.success(f"Predicted Product Store Sales Total: {predicted_sales:,.2f}")
         else:
             st.error(f"API error ({response.status_code}): {response.text}")
     except requests.RequestException as exc:
