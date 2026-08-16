@@ -54,7 +54,7 @@ if st.button("Predict", type="primary"):
         )
         if response.ok:
             predicted_sales = response.json()["Sales"]
-            st.success(f"Predicted Product Store Sales Total: ₹{predicted_sales:,.2f}")
+            st.success(f"Predicted Product Store Sales Total: {predicted_sales:,.2f}") 
         else:
             st.error(f"API error ({response.status_code}): {response.text}")
     except requests.RequestException as exc:
